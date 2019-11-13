@@ -1,0 +1,27 @@
+# Config files
+.gitignore
+.prettierignore
+.npmrc
+.browserslistrc
+yarn.lock
+
+# Images
+**/*.png
+**/*.svg
+**/*.hbs
+**/*.ico
+
+# Fonts
+**/*.woff2
+**/*.woff
+**/*.ttf
+**/*.eot
+
+# Bash Scripts
+**/*.sh
+
+# Github Files
+CODEOWNERS
+
+# Other files
+**/*.txt
