@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "core-js": "^3.3.2",
+    "husky": "^3.0.9",
+    "lint-staged": "^9.4.3",
     "register-service-worker": "^1.6.2",
     "vue": "^2.6.10",
     "vue-class-component": "^7.0.2",
@@ -37,5 +39,16 @@
     "less-loader": "^5.0.0",
     "typescript": "~3.5.3",
     "vue-template-compiler": "^2.6.10"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }
