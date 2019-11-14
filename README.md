@@ -1,5 +1,7 @@
 # fernie-shuttle
 
+This is a simple frontend application to display the timetable of the [Fernie Shuttle](http://fernieskishuttle.com).
+
 ## Project setup
 
 ```
