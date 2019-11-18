@@ -1,0 +1,9 @@
+[
+  {
+    "id": "route-1",
+    "name": "Morning Route",
+    "description": "The morning route",
+    "stops": ["stop-1", "stop-2"],
+    "schedule": [[480, 500]]
+  }
+]
