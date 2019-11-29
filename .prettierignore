@@ -4,6 +4,7 @@
 .npmrc
 .browserslistrc
 yarn.lock
+.env.*
 
 # Images
 **/*.png
