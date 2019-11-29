@@ -16,6 +16,10 @@ export function getCurrentGeoLocation(): Promise<google.maps.LatLngLiteral> {
         (error) => {
           console.warn('Error getting user location');
           reject(error);
+        },
+        {
+          // Wait for a maximum of 5s
+          timeout: 5000
         }
       );
     } else {

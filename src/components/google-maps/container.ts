@@ -100,14 +100,13 @@ export default class GoogleMapContainer extends Vue {
           icon: currentPosMarkerImg
         });
       }
-
-      // Call this function again in 30s so we get the latest value
-      this.autoUpdateId = setTimeout(() => {
-        this.autoUpdateCurrentLocation();
-      }, 30 * 1000);
     } catch (error) {
       // Something went wrong...
       console.error(error);
     }
+    // Call this function again in 3s so we get the latest value
+    this.autoUpdateId = setTimeout(() => {
+      this.autoUpdateCurrentLocation();
+    }, 3 * 1000);
   }
 }
