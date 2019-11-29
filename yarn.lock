@@ -1040,6 +1040,11 @@
     "@types/minimatch" "*"
     "@types/node" "*"
 
+"@types/googlemaps@*", "@types/googlemaps@^3.38.0":
+  version "3.38.0"
+  resolved "https://registry.yarnpkg.com/@types/googlemaps/-/googlemaps-3.38.0.tgz#069c0303ec60706b2e32b14330634c1e1cd59e45"
+  integrity sha512-Rp7FnrwyYGnjoxM+/q/4DRqUzvV9JKK1SBRXx8APxU6NNMtYMsWmOMsQOV2U6z8aMFzlUbRv3EDixLcDep8t9w==
+
 "@types/istanbul-lib-coverage@*", "@types/istanbul-lib-coverage@^2.0.0":
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/@types/istanbul-lib-coverage/-/istanbul-lib-coverage-2.0.1.tgz#42995b446db9a48a11a07ec083499a860e9138ff"
@@ -1071,6 +1076,13 @@
   version "7.0.3"
   resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.3.tgz#bdfd69d61e464dcc81b25159c270d75a73c1a636"
   integrity sha512-Il2DtDVRGDcqjDtE+rF8iqg1CArehSK84HZJCT7AMITlyXRBpuPhqGLDQMowraqqu1coEaimg4ZOqggt6L6L+A==
+
+"@types/load-google-maps-api@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@types/load-google-maps-api/-/load-google-maps-api-2.0.0.tgz#74f1fbee915eb2094ab305d5d24edcb71d043deb"
+  integrity sha512-EiK9ih0bwY+xh2QXjG7lhvddQQ4KFjMPJkWWYI4+3OnbzBgh+5z9AZKA+WTu/+53/l2U1gbn7Dfa8GZF2Hw2Tg==
+  dependencies:
+    "@types/googlemaps" "*"
 
 "@types/minimatch@*":
   version "3.0.3"
@@ -6776,6 +6788,11 @@ listr@^0.14.3:
     listr-verbose-renderer "^0.5.0"
     p-map "^2.0.0"
     rxjs "^6.3.3"
+
+load-google-maps-api@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/load-google-maps-api/-/load-google-maps-api-2.0.1.tgz#3af80e2eb8196457b4b88360c092ad9575e35fec"
+  integrity sha512-eQRA90S//j3OFN1WNic9G9ZZKH6Z7J59/mB46S9ByPx0vFJMN5BnvR97IXNzQ2v4p0/tI0TSPV8L71e+G/3jjQ==
 
 load-json-file@^2.0.0:
   version "2.0.0"
