@@ -3,6 +3,9 @@
 # abort on errors
 set -e
 
+# Set NODE_ENV to be production
+export NODE_ENV=production
+
 # build
 yarn build
 
