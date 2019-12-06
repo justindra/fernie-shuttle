@@ -1,8 +1,32 @@
 [
   {
     "id": "route-1",
-    "name": "Morning Route",
+    "name": "Morning",
     "description": "The morning route",
+    "stops": [
+      "stop-1",
+      "stop-2",
+      "stop-3",
+      "stop-4",
+      "stop-5",
+      "stop-6",
+      "stop-7",
+      "stop-8",
+      "stop-9"
+    ],
+    "schedule": [[480, 500]]
+  },
+  {
+    "id": "route-2",
+    "name": "Afternoon",
+    "description": "The afternoon route",
+    "stops": ["stop-1", "stop-2"],
+    "schedule": [[480, 500]]
+  },
+  {
+    "id": "route-3",
+    "name": "Evening",
+    "description": "The evening route",
     "stops": ["stop-1", "stop-2"],
     "schedule": [[480, 500]]
   }

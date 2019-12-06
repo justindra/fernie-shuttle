@@ -1,6 +1,7 @@
-import { Vue, Component, Prop } from 'vue-property-decorator';
+import { Vue, Component, Prop, Watch, Emit } from 'vue-property-decorator';
 import GoogleMapsApi from 'load-google-maps-api';
 import { getCurrentGeoLocation } from './helpers';
+import { IStop } from '@/api/stops';
 
 // Require the marker image to show the current position
 const currentPosMarkerImg = require('./current-position-marker.png');
@@ -25,8 +26,15 @@ export default class GoogleMapContainer extends Vue {
   })
   readonly config!: google.maps.MapOptions;
 
+  // A list of stops used in the map
+  @Prop({
+    type: Array,
+    default: () => []
+  })
+  readonly stops!: IStop[];
+
   // The google map api object
-  google!: typeof google.maps;
+  google: typeof google.maps | null = null;
 
   // The map object
   map!: google.maps.Map;
@@ -69,19 +77,23 @@ export default class GoogleMapContainer extends Vue {
    * Initialize the Map
    */
   private async initializeMap() {
+    if (!this.google) return;
     // Initialize the map
     const mapEl = this.$refs.googleMap as Element;
     this.map = new this.google.Map(mapEl, this.config);
     // Start the auto updating of the current location
     await this.autoUpdateCurrentLocation();
-    // Center the map around the current position
-    this.map.setCenter(this.currentPos);
+    // Make sure we fit the bounds
+    this.handleStopsChanged(this.stops);
+
+    this.google.event.addListener(this.map, 'click', this.handleMapClicked);
   }
 
   /**
    * Start the auto update process of the current location
    */
   private async autoUpdateCurrentLocation() {
+    if (!this.google) return;
     // Clear the previous timeout if any
     clearTimeout(this.autoUpdateId);
     try {
@@ -96,7 +108,7 @@ export default class GoogleMapContainer extends Vue {
         // Marker does not exist, so let's create a new one
         this.currentPosMarker = new this.google.Marker({
           position: coords,
-          map: this.map,
+          map: this.map as google.maps.Map,
           icon: currentPosMarkerImg
         });
       }
@@ -108,5 +120,32 @@ export default class GoogleMapContainer extends Vue {
     this.autoUpdateId = setTimeout(() => {
       this.autoUpdateCurrentLocation();
     }, 3 * 1000);
+  }
+
+  // Watch the changes to stops
+  @Watch('stops')
+  /**
+   * Handle when that list changes
+   */
+  handleStopsChanged(stops: IStop[]) {
+    if (!this.google) return;
+    const bounds = new this.google.LatLngBounds();
+    // Add all the stops to the bounds
+    stops.forEach((stop) => {
+      bounds.extend(stop.point);
+    });
+    // Add our current position to the bounds
+    if (this.currentPos) bounds.extend(this.currentPos);
+    // Make sure we fit it all in there
+    this.map.fitBounds(bounds);
+  }
+
+  // Emit the click event
+  @Emit('click')
+  /**
+   * Handle when the map is clicked
+   */
+  handleMapClicked() {
+    return this.map;
   }
 }

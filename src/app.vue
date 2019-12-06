@@ -18,24 +18,14 @@
         <div class="md-toolbar-row">
           <md-tabs class="md-primary" md-alignment="fixed" md-sync-route>
             <md-tab
-              id="tab-morning"
-              md-label="Morning"
-              :to="{ name: 'route', params: { routeName: 'morning' } }"
-            ></md-tab>
-            <md-tab
-              id="tab-afternoon"
-              md-label="Afternoon"
-              :to="{ name: 'route', params: { routeName: 'afternoon' } }"
-            ></md-tab>
-            <md-tab
-              id="tab-evening"
-              md-label="Evening"
-              :to="{ name: 'route', params: { routeName: 'evening' } }"
+              v-for="route of routes"
+              :key="route.id"
+              :md-label="route.name"
+              :to="{ name: 'route', params: { routeId: route.id } }"
             ></md-tab>
           </md-tabs>
         </div>
       </md-app-toolbar>
-
       <md-app-content>
         <router-view></router-view>
       </md-app-content>
@@ -43,9 +33,37 @@
   </div>
 </template>
 
+<script lang="ts">
+import { Vue, Component } from 'vue-property-decorator';
+import { IRoute } from './api/routes';
+
+@Component
+export default class App extends Vue {
+  // List of available routes
+  routes: IRoute[] = [];
+
+  /**
+   * Vue Lifecycle Method
+   */
+  async created() {
+    // Get the list of routes
+    this.routes = await this.$api.Routes.getAll();
+
+    // If no route was specified, go to the first route provided
+    if (!this.$route.params.routeId) {
+      this.$router.push({ name: 'route', params: { routeId: this.routes[0].id } });
+    }
+  }
+}
+</script>
+
 <style lang="less" scoped>
 .md-app {
   max-height: 100vh;
+
+  & > .md-app-container {
+    overflow: hidden;
+  }
 
   .md-app-content {
     padding: 16px 0 0;

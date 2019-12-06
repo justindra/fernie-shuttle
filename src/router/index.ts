@@ -8,12 +8,13 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    redirect: '/route/morning'
+    redirect: 'route'
   },
   {
-    path: '/route/:routeName',
+    path: '/route/:routeId',
     name: 'route',
-    component: Map
+    component: Map,
+    props: true
   },
   {
     path: '/info',

@@ -18,8 +18,17 @@ import 'vue-material/dist/theme/default.css';
 import App from './app.vue';
 import './registerServiceWorker';
 import router from './router';
+import api from './api';
 
 Vue.config.productionTip = false;
+
+// Inject API into the Vue Instance, so we can just use it easily
+declare module 'vue/types/vue' {
+  interface Vue {
+    $api: typeof api;
+  }
+}
+Vue.prototype.$api = api;
 
 // Setup VueMaterial Components
 Vue.use(MdApp);

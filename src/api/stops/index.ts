@@ -7,7 +7,7 @@ export interface IStop {
   // WGS84/Pseudo-Mercator coordinates of the stop
   point: {
     lat: number;
-    long: number;
+    lng: number;
   };
 }
 

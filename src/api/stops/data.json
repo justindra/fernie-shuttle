@@ -4,17 +4,80 @@
     "name": "Fernie Alpine Resort",
     "description": "",
     "point": {
-      "lat": 0,
-      "long": 0
+      "lng": -115.0871505,
+      "lat": 49.462295
     }
   },
   {
     "id": "stop-2",
-    "name": "Super 8",
+    "name": "Bridge Bistro",
     "description": "",
     "point": {
-      "lat": 0,
-      "long": 0
+      "lng": -115.069123,
+      "lat": 49.5049295
+    }
+  },
+  {
+    "id": "stop-3",
+    "name": "Valley Lodging & Red Tree Lodge",
+    "description": "",
+    "point": {
+      "lng": -115.0628249,
+      "lat": 49.5101194
+    }
+  },
+  {
+    "id": "stop-4",
+    "name": "Best Western PLUS Lodge",
+    "description": "",
+    "point": {
+      "lng": -115.0584583,
+      "lat": 49.5135962
+    }
+  },
+  {
+    "id": "stop-5",
+    "name": "Elk Hostel & Powder Mtn Lodge",
+    "description": "",
+    "point": {
+      "lng": -115.0631418,
+      "lat": 49.507985
+    }
+  },
+  {
+    "id": "stop-6",
+    "name": "Park Place Lodge",
+    "description": "",
+    "point": {
+      "lng": -115.0641155,
+      "lat": 49.5070097
+    }
+  },
+  {
+    "id": "stop-7",
+    "name": "Fernie & Wildsight",
+    "description": "",
+    "point": {
+      "lng": -115.0583423,
+      "lat": 49.5064122
+    }
+  },
+  {
+    "id": "stop-8",
+    "name": "Gearhub Sports Downtown ",
+    "description": "",
+    "point": {
+      "lng": -115.0617141,
+      "lat": 49.5020051
+    }
+  },
+  {
+    "id": "stop-9",
+    "name": "Super 8 Hotel",
+    "description": "",
+    "point": {
+      "lng": -115.0806968,
+      "lat": 49.4976825
     }
   }
 ]

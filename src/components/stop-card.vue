@@ -3,10 +3,10 @@
     <md-card-area md-inset>
       <md-card-header>
         <md-card-header-text>
-          <h2 class="md-title">GearHub Sports</h2>
+          <h2 class="md-title">{{ stop.name }}</h2>
           <div class="md-subhead">
             <md-icon>location_on</md-icon>
-            <span>4th Ave & 7th St</span>
+            <span>{{ stop.description }}</span>
           </div>
         </md-card-header-text>
         <div class="md-card-status">
@@ -43,6 +43,22 @@
     </md-card-content>
   </md-card>
 </template>
+
+<script lang="ts">
+import { Vue, Prop, Component } from 'vue-property-decorator';
+import { IStop } from '../api/stops';
+
+@Component
+export default class StopCard extends Vue {
+  // Stop to display
+  @Prop({
+    type: Object,
+    required: true,
+    default: () => ({})
+  })
+  readonly stop!: IStop;
+}
+</script>
 
 <style lang="less" scoped>
 .md-card.md-card-location {
