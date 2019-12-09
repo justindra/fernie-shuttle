@@ -20,8 +20,9 @@ export default class GoogleMapContainer extends Vue {
     type: Object,
     required: false,
     default: () => ({
-      center: { lat: 0, lng: 0 },
-      zoom: 18,
+      // Default to Fernie
+      center: { lat: 49.487312, lng: -115.076268 },
+      zoom: 13,
       streetViewControl: false,
       fullscreenControl: false
     })
