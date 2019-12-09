@@ -61,7 +61,8 @@ export default class App extends Vue {
 .md-app {
   max-height: 100vh;
 
-  & > .md-app-container {
+  // Target the md-app container that is inside the material component
+  & /deep/ .md-app-container {
     overflow: hidden;
   }
 

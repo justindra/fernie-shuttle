@@ -1,6 +1,15 @@
 <template>
-  <md-card class="md-card-location">
-    <md-card-area md-inset>
+  <md-card
+    class="md-card-location"
+    @touchstart.native="dragStart"
+    @touchmove.native="drag"
+    @touchend.native="dragEnd"
+    @mousedown.native="dragStart"
+    @mousemove.native="drag"
+    @mouseup.native="dragEnd"
+    :style="style"
+  >
+    <md-card-area md-inset ref="stopDetails">
       <md-card-header>
         <md-card-header-text>
           <h2 class="md-title">{{ stop.name }}</h2>
@@ -15,7 +24,7 @@
       </md-card-header>
     </md-card-area>
 
-    <md-card-content>
+    <md-card-content ref="stopTimetable">
       <md-list class="md-dense">
         <md-subheader>Morning</md-subheader>
         <md-list-item>
@@ -44,21 +53,7 @@
   </md-card>
 </template>
 
-<script lang="ts">
-import { Vue, Prop, Component } from 'vue-property-decorator';
-import { IStop } from '../api/stops';
-
-@Component
-export default class StopCard extends Vue {
-  // Stop to display
-  @Prop({
-    type: Object,
-    required: true,
-    default: () => ({})
-  })
-  readonly stop!: IStop;
-}
-</script>
+<script lang="ts" src="./stop-card.ts"></script>
 
 <style lang="less" scoped>
 .md-card.md-card-location {
@@ -68,6 +63,8 @@ export default class StopCard extends Vue {
   bottom: 0;
   left: 0;
   right: 0;
+
+  transition: bottom 300ms;
 
   .md-card-header {
     display: flex;
