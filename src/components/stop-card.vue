@@ -43,7 +43,8 @@
 
 <style lang="less" scoped>
 .md-card.md-card-location {
-  margin: 0;
+  margin: 0 auto;
+  max-width: 36rem;
 
   position: absolute;
   bottom: 0;
