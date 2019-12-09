@@ -21,7 +21,9 @@ export default class GoogleMapContainer extends Vue {
     required: false,
     default: () => ({
       center: { lat: 0, lng: 0 },
-      zoom: 18
+      zoom: 18,
+      streetViewControl: false,
+      fullscreenControl: false
     })
   })
   readonly config!: google.maps.MapOptions;
