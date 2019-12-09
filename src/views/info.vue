@@ -34,6 +34,14 @@
     </p>
     <p>Details and schedule subject to change without notice.</p>
     <p>April may see daytime and evening service reduced.</p>
+    <p>
+      Download the PDF Schedule
+      <a
+        target="_blank"
+        href="https://tourismfernie.com/uploads/listings/92/FerniestokeSkiShuttleSchedule_2019-2020-2.pdf"
+        >here</a
+      >.
+    </p>
 
     <h2>About the Shuttle</h2>
     <p>
