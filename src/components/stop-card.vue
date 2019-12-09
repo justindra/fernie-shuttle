@@ -8,8 +8,10 @@
     @mousemove.native="drag"
     @mouseup.native="dragEnd"
     :style="style"
+    md-with-hover
   >
-    <md-card-area md-inset ref="stopDetails">
+    <div class="card-tab"></div>
+    <md-card-area md-inset ref="stopDetails" @click.native="handleClick">
       <md-card-header>
         <md-card-header-text>
           <h2 class="md-title">{{ stop.name }}</h2>
@@ -49,6 +51,18 @@
   right: 0;
 
   transition: bottom 300ms;
+
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+
+  .card-tab {
+    width: 5rem;
+    height: 0.25rem;
+    background: #d6d6d6;
+    margin: auto;
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+  }
 
   .md-card-header {
     display: flex;

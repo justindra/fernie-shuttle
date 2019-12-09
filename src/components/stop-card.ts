@@ -136,6 +136,16 @@ export default class StopCard extends Vue {
   }
 
   /**
+   * Handle clicking on the details card
+   */
+  handleClick() {
+    // If its not fully opened, open it all
+    if (this.currentY === 0) {
+      this.setYPosition(this.openMax);
+    }
+  }
+
+  /**
    * Start the dragging process
    * @param event The touch or mouse drag event
    */
