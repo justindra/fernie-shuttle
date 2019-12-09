@@ -1,5 +1,5 @@
 <script lang="ts">
-import { Vue, Component, Prop, Emit } from 'vue-property-decorator';
+import { Vue, Component, Prop, Emit, Watch } from 'vue-property-decorator';
 import { IStop } from '../../api/stops';
 
 @Component({
@@ -64,6 +64,14 @@ export default class Marker extends Vue {
   beforeDestroy() {
     // Remove the marker from the map
     this.gmapMarker.setMap(null);
+  }
+
+  @Watch('position')
+  /**
+   * Update the label when the position changes
+   */
+  updateMarkerLabel() {
+    this.gmapMarker.setLabel(`${this.position + 1}`);
   }
 
   // Emit the click event
