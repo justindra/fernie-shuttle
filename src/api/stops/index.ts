@@ -9,6 +9,11 @@ export interface IStop {
     lat: number;
     lng: number;
   };
+  schedule: {
+    // The schedule for each route, key'd by Id.
+    // The schedule is set in minutes from midnight for each of those routes
+    [routeId: string]: number[];
+  };
 }
 
 const Data: IStop[] = stopData;

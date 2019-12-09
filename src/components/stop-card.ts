@@ -1,7 +1,13 @@
 import { Vue, Prop, Component } from 'vue-property-decorator';
 import { IStop } from '../api/stops';
 
-@Component
+import StopTimetable from './stop-timetable.vue';
+
+@Component({
+  components: {
+    StopTimetable
+  }
+})
 export default class StopCard extends Vue {
   // Stop to display
   @Prop({

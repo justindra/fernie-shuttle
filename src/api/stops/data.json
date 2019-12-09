@@ -2,82 +2,227 @@
   {
     "id": "stop-1",
     "name": "Fernie Alpine Resort",
-    "description": "",
+    "description": "big ski pole at base area",
     "point": {
       "lng": -115.0871505,
       "lat": 49.462295
+    },
+    "schedule": {
+      "route-1": [520, 550, 580, 610, 640, 670],
+      "route-2": [780, 810, 840, 870, 900, 930, 960, 990],
+      "route-3": []
     }
   },
   {
     "id": "stop-2",
-    "name": "Bridge Bistro",
+    "name": "Stanford Resort Hotel",
     "description": "",
     "point": {
-      "lng": -115.069123,
-      "lat": 49.5049295
+      "lng": -115.078255,
+      "lat": 49.486901
+    },
+    "schedule": {
+      "route-1": [465, 495, 525, 555, 585, 615, 645, 675],
+      "route-2": [788, 818, 848, 878, 908, 938, 968, 998],
+      "route-3": [1067, 1127, 1187, 1247, 1307, 1367]
     }
   },
   {
     "id": "stop-3",
-    "name": "Valley Lodging & Red Tree Lodge",
+    "name": "Canadas Best Value Inn & Bridge Bistro Restaurant",
     "description": "",
     "point": {
-      "lng": -115.0628249,
-      "lat": 49.5101194
+      "lng": -115.069123,
+      "lat": 49.5049295
+    },
+    "schedule": {
+      "route-1": [468, 498, 528, 558, 588, 618, 648, 678],
+      "route-2": [808, 838, 868, 898, 928, 958, 988, 1018],
+      "route-3": [1073, 1133, 1193, 1253, 1313, 1373]
     }
   },
   {
     "id": "stop-4",
-    "name": "Best Western PLUS Lodge",
+    "name": "Snow Valley Lodging & Red Tree Lodge",
     "description": "",
     "point": {
-      "lng": -115.0584583,
-      "lat": 49.5135962
+      "lng": -115.0628249,
+      "lat": 49.5101194
+    },
+    "schedule": {
+      "route-1": [471, 501, 531, 561, 591, 621, 651, 681],
+      "route-2": [807, 837, 867, 897, 927, 957, 987, 1017],
+      "route-3": []
     }
   },
   {
     "id": "stop-5",
-    "name": "Elk Hostel & Powder Mtn Lodge",
+    "name": "Best Western PLUS Fernie Mountain Lodge",
     "description": "",
     "point": {
-      "lng": -115.0631418,
-      "lat": 49.507985
+      "lng": -115.0584583,
+      "lat": 49.5135962
+    },
+    "schedule": {
+      "route-1": [474, 504, 534, 564, 594, 624, 654, 684],
+      "route-2": [802, 832, 862, 892, 922, 952, 982, 1012],
+      "route-3": [1083, 1143, 1203, 1263, 1323, 1383]
     }
   },
   {
     "id": "stop-6",
-    "name": "Park Place Lodge",
+    "name": "Fernie RV Resort & Adventure Centre",
     "description": "",
     "point": {
-      "lng": -115.0641155,
-      "lat": 49.5070097
+      "lng": -115.05162,
+      "lat": 49.51972
+    },
+    "schedule": {
+      "route-1": [478, 508, 538, 568, 598, 628, 658, 688],
+      "route-2": [801, 831, 861, 891, 921, 951, 981, 1011],
+      "route-3": [1080, 1140, 1200, 1260, 1320, 1380]
     }
   },
   {
     "id": "stop-7",
-    "name": "Fernie & Wildsight",
-    "description": "",
+    "name": "Raging Elk Hostel & Powder Mountain Lodge",
+    "description": "on 6th Ave",
     "point": {
-      "lng": -115.0583423,
-      "lat": 49.5064122
+      "lng": -115.0631418,
+      "lat": 49.507985
+    },
+    "schedule": {
+      "route-1": [484, 514, 544, 574, 604, 634, 664, 694],
+      "route-2": [804, 834, 864, 894, 924, 954, 984, 1014],
+      "route-3": [1086, 1146, 1206, 1266, 1326, 1386]
     }
   },
   {
     "id": "stop-8",
-    "name": "Gearhub Sports Downtown ",
-    "description": "",
+    "name": "Park Place Lodge",
+    "description": "back of hotel on 6th Ave",
     "point": {
-      "lng": -115.0617141,
-      "lat": 49.5020051
+      "lng": -115.06411,
+      "lat": 49.507052
+    },
+    "schedule": {
+      "route-1": [487, 517, 547, 577, 607, 637, 667, 697],
+      "route-2": [805, 835, 865, 895, 925, 955, 985, 1015],
+      "route-3": [1087, 1147, 1207, 1267, 1327, 1387]
     }
   },
   {
     "id": "stop-9",
+    "name": "901 Fernie / Spa 901",
+    "description": "on 2nd Ave",
+    "point": {
+      "lng": -115.057986,
+      "lat": 49.506734
+    },
+    "schedule": {
+      "route-1": [490, 520, 550, 580, 610, 640, 670, 700],
+      "route-2": [796, 826, 856, 886, 916, 946, 976, 1006],
+      "route-3": []
+    }
+  },
+  {
+    "id": "stop-10",
+    "name": "Gearhub Sports / Historic Downtown Fernie",
+    "description": "",
+    "point": {
+      "lng": -115.0617141,
+      "lat": 49.5020051
+    },
+    "schedule": {
+      "route-1": [495, 525, 555, 585, 615, 645, 675, 705],
+      "route-2": [793, 823, 853, 883, 913, 943, 973, 1003],
+      "route-3": []
+    }
+  },
+  {
+    "id": "stop-11",
     "name": "Super 8 Hotel",
     "description": "",
     "point": {
       "lng": -115.0806968,
       "lat": 49.4976825
+    },
+    "schedule": {
+      "route-1": [499, 529, 559, 589, 619, 649, 679, 709],
+      "route-2": [810, 840, 870, 900, 930, 960, 990, 1020],
+      "route-3": [1070, 1130, 1190, 1250, 1310, 1370]
+    }
+  },
+  {
+    "id": "stop-12",
+    "name": "Snow Creek Lodge",
+    "description": "",
+    "point": {
+      "lng": -115.088987,
+      "lat": 49.464881
+    },
+    "schedule": {
+      "route-3": [1050, 1110, 1170, 1230, 1290, 1350]
+    }
+  },
+  {
+    "id": "stop-13",
+    "name": "Lizard Creek Lodge",
+    "description": "",
+    "point": {
+      "lng": -115.085975,
+      "lat": 49.465509
+    },
+    "schedule": {
+      "route-3": [1053, 1113, 1173, 1233, 1293, 1353]
+    }
+  },
+  {
+    "id": "stop-14",
+    "name": "Mountain Pantry Grocery Store",
+    "description": "at Fernie Alpine Resort",
+    "point": {
+      "lng": -115.084801,
+      "lat": 49.462764
+    },
+    "schedule": {
+      "route-3": [1056, 1116, 1176, 1236, 1296, 1356]
+    }
+  },
+  {
+    "id": "stop-15",
+    "name": "Timberline Lodges",
+    "description": "",
+    "point": {
+      "lng": -115.081211,
+      "lat": 49.46358
+    },
+    "schedule": {
+      "route-3": [1060, 1120, 1180, 1240, 1300, 1360]
+    }
+  },
+  {
+    "id": "stop-16",
+    "name": "Historic Downtown Fernie",
+    "description": "2nd Ave by Big Bang Bagels",
+    "point": {
+      "lng": -115.061428,
+      "lat": 49.503092
+    },
+    "schedule": {
+      "route-3": [1075, 1135, 1195, 1255, 1315, 1375]
+    }
+  },
+  {
+    "id": "stop-17",
+    "name": "Historic Downtown Fernie",
+    "description": "2nd Ave by Nevados/The Northern",
+    "point": {
+      "lng": -115.061276,
+      "lat": 49.503495
+    },
+    "schedule": {
+      "route-3": [1089, 1149, 1209, 1269, 1329, 1389]
     }
   }
 ]
