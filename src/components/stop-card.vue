@@ -18,7 +18,8 @@
           </div>
         </md-card-header-text>
         <div class="md-card-status">
-          in 30 min
+          Next shuttle<br />
+          {{ nextDue }}
         </div>
       </md-card-header>
     </md-card-area>
@@ -52,6 +53,13 @@
   .md-card-header {
     display: flex;
     align-items: baseline;
+
+    .md-card-header-text {
+      margin-right: 1rem;
+    }
+    .md-card-status {
+      text-align: right;
+    }
   }
 }
 </style>

@@ -3,11 +3,12 @@
     <google-map v-slot="{ google, map }" :apiKey="apiKey" :stops="stops" @click="closeCurrentCard">
       <!-- Show all the stops marker for the route -->
       <google-map-marker
-        v-for="stop of stops"
+        v-for="(stop, index) of stops"
         :key="stop.id"
         :google="google"
         :map="map"
         :stop="stop"
+        :position="index"
         @click="handleMarkerClicked"
       ></google-map-marker>
     </google-map>

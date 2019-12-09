@@ -13,7 +13,8 @@ module.exports = {
     '@typescript-eslint/no-useless-constructor': 'error',
     // See https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-empty-function.md#rule-changes
     'no-empty-function': 'off',
-    '@typescript-eslint/no-empty-function': 'error'
+    '@typescript-eslint/no-empty-function': 'error',
+    'no-restricted-syntax': ['error', 'ForInStatement', 'LabeledStatement', 'WithStatement']
   },
   parserOptions: {
     parser: '@typescript-eslint/parser'

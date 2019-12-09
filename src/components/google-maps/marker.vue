@@ -27,6 +27,12 @@ export default class Marker extends Vue {
   })
   readonly stop!: IStop;
 
+  @Prop({
+    type: Number,
+    default: ''
+  })
+  readonly position!: number;
+
   // The google map marker instance
   gmapMarker!: google.maps.Marker;
 
@@ -45,7 +51,8 @@ export default class Marker extends Vue {
     // Add a new marker to the google maps object
     this.gmapMarker = new this.google.Marker({
       position: this.stop.point,
-      map: this.map
+      map: this.map,
+      label: `${this.position + 1}`
     });
     // Add event listener to liste to clicks on the marker
     this.google.event.addListener(this.gmapMarker, 'click', this.handleMarkerClicked);

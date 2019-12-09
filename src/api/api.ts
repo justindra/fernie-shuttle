@@ -32,12 +32,16 @@ export default class ApiFactory<T = IEntity> {
   }
 
   /**
-   * Get all availabale entities given the provided id
+   * Get all available entities given the provided id
    */
   hydrate(ids: string[]): Promise<T[]> {
     return new Promise((resolve) => {
-      const res = this.data.filter((val) => ids.includes(((val as unknown) as IEntity).id));
-      resolve(res);
+      const res = ids
+        // Return a sorted array based on the given ids
+        .map((id) => this.data.find((val) => ((val as unknown) as IEntity).id === id))
+        // Remove any undefined values
+        .filter((val) => !!val);
+      resolve(res as T[]);
     });
   }
 }
