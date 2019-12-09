@@ -1,4 +1,4 @@
-import { Vue, Prop, Component } from 'vue-property-decorator';
+import { Vue, Prop, Component, Watch } from 'vue-property-decorator';
 import { IStop } from '../api/stops';
 
 import StopTimetable from './stop-timetable.vue';
@@ -51,6 +51,24 @@ export default class StopCard extends Vue {
    * Vue Lifecycle Hook
    */
   mounted() {
+    this.updateMeasurements();
+  }
+
+  // Watch changes to the stop prop
+  @Watch('stop')
+  /**
+   * Handle when the stop is updated
+   */
+  handleUpdateStop() {
+    // The reason for the setTimeout is so that the UI has a chance to render before we
+    // start doing our calculations
+    setTimeout(this.updateMeasurements.bind(this), 0);
+  }
+
+  /**
+   * Update the measurements to provide a nice drag interface for the card
+   */
+  updateMeasurements() {
     // The extra 8 px is the margin from the divider line
     const heightOfTimetable = (this.$refs.stopTimetable as Vue).$el.clientHeight + 8;
     const heightOfHeader = (this.$refs.stopDetails as Vue).$el.clientHeight;
