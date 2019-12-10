@@ -1,6 +1,6 @@
 <template>
   <div class="map">
-    <google-map v-slot="{ google, map }" :apiKey="apiKey" :stops="stops" @click="closeCurrentCard">
+    <google-map v-slot="{ google, map }" :apiKey="apiKey" :stops="stops" @click="handleMapClicked">
       <!-- Show all the stops marker for the route -->
       <google-map-marker
         v-for="(stop, index) of stops"
@@ -75,6 +75,18 @@ export default class Map extends Vue {
    */
   handleMarkerClicked(stop: IStop) {
     this.currentStop = stop;
+    this.$ga.event('Card', 'click-open', stop.name);
+  }
+
+  /**
+   * Handle when the map is clicked
+   */
+  handleMapClicked() {
+    // If there is a current stop open
+    if (this.currentStop) {
+      this.$ga.event('Card', 'click-close', this.currentStop.name);
+      this.closeCurrentCard();
+    }
   }
 
   /**

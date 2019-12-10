@@ -142,6 +142,7 @@ export default class StopCard extends Vue {
     // If its not fully opened, open it all
     if (this.currentY === 0) {
       this.setYPosition(this.openMax);
+      this.$ga.event('Card', 'click-open', this.stop.name);
     }
   }
 
@@ -197,14 +198,17 @@ export default class StopCard extends Vue {
     if (this.yOffset <= this.openMin) {
       // Set the card to be opened
       this.setYPosition(this.openMax);
+      this.$ga.event('Card', 'drag-open', this.stop.name);
     } else if (this.yOffset >= this.closedMin) {
       // Set the card to be closed
       this.setYPosition(this.closedMax);
+      this.$ga.event('Card', 'drag-close', this.stop.name);
       // Emit a closed event to notify the parent
       this.$emit('closed');
     } else {
       // Set the card to show just the details
       this.setYPosition(0);
+      this.$ga.event('Card', 'drag-half', this.stop.name);
     }
   }
 
