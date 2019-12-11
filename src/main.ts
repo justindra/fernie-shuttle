@@ -21,13 +21,12 @@ import './registerServiceWorker';
 import router from './router';
 import api from './api';
 
-// Enable Google Analytics in production if the Tracking Id was provided
-if (process.env.NODE_ENV === 'production' && process.env.VUE_APP_GOOGLE_ANALYTICS_TRACKING_ID) {
-  Vue.use(VueAnalytics, {
-    id: process.env.VUE_APP_GOOGLE_ANALYTICS_TRACKING_ID,
-    router
-  });
-}
+// Enable Google Analytics only in production
+Vue.use(VueAnalytics, {
+  id: process.env.VUE_APP_GOOGLE_ANALYTICS_TRACKING_ID,
+  router,
+  disabled: process.env.NODE_ENV !== 'production'
+});
 
 Vue.config.productionTip = false;
 
