@@ -24,7 +24,10 @@ export default class GoogleMapContainer extends Vue {
       center: { lat: 49.487312, lng: -115.076268 },
       zoom: 13,
       streetViewControl: false,
-      fullscreenControl: false
+      fullscreenControl: false,
+      // Always pan and zoom using one finger on mobile
+      // https://developers.google.com/maps/documentation/javascript/interaction#gesture-handling
+      gestureHandling: 'greedy'
     })
   })
   readonly config!: google.maps.MapOptions;
