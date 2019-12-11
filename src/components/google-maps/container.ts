@@ -117,7 +117,7 @@ export default class GoogleMapContainer extends Vue {
         // The user has denied the Geolocation permission
         // Let's stop tying to get anything
         clearTimeout(this.autoUpdateId);
-        this.$ga.event('Location', 'permission', 'denied');
+        this.$ga.exception('GeoLocation permission denied');
         return;
       }
       console.error(error);

@@ -25,7 +25,10 @@ import api from './api';
 Vue.use(VueAnalytics, {
   id: process.env.VUE_APP_GOOGLE_ANALYTICS_TRACKING_ID,
   router,
-  disabled: process.env.NODE_ENV !== 'production'
+  disabled: process.env.NODE_ENV !== 'production',
+  autoTracking: {
+    exception: true
+  }
 });
 
 Vue.config.productionTip = false;
