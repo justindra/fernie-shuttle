@@ -32,8 +32,8 @@
     "name": "Canadas Best Value Inn & Bridge Bistro Restaurant",
     "description": "",
     "point": {
-      "lng": -115.069123,
-      "lat": 49.5049295
+      "lng": -115.068854,
+      "lat": 49.504941
     },
     "schedule": {
       "route-1": [468, 498, 528, 558, 588, 618, 648, 678],
@@ -60,8 +60,8 @@
     "name": "Best Western PLUS Fernie Mountain Lodge",
     "description": "",
     "point": {
-      "lng": -115.0584583,
-      "lat": 49.5135962
+      "lng": -115.057986,
+      "lat": 49.51459
     },
     "schedule": {
       "route-1": [474, 504, 534, 564, 594, 624, 654, 684],
