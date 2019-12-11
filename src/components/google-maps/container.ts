@@ -43,10 +43,7 @@ export default class GoogleMapContainer extends Vue {
   map!: google.maps.Map;
 
   // The current position
-  currentPos: google.maps.LatLngLiteral = {
-    lat: 0,
-    lng: 0
-  };
+  currentPos!: google.maps.LatLngLiteral;
 
   // The marker for the current position
   currentPosMarker!: google.maps.Marker;
@@ -116,7 +113,12 @@ export default class GoogleMapContainer extends Vue {
         });
       }
     } catch (error) {
-      // Something went wrong...
+      if (error.code === 1) {
+        // The user has denied the Geolocation permission
+        // Let's stop tying to get anything
+        clearTimeout(this.autoUpdateId);
+        return;
+      }
       console.error(error);
     }
     // Call this function again in 3s so we get the latest value
