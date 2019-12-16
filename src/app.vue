@@ -1,6 +1,6 @@
 <template>
   <div class="page-container">
-    <md-app md-waterfall md-mode="fixed-last">
+    <md-app md-waterfall md-mode="fixed-last" :class="{ 'os-android': isAndroid }">
       <md-app-toolbar class="md-large md-dense md-primary">
         <div class="md-toolbar-row">
           <!-- Title Bar -->
@@ -37,10 +37,20 @@
 import { Vue, Component } from 'vue-property-decorator';
 import { IRoute } from './api/routes';
 
+/**
+ * Check if the current browser is running on Android
+ */
+function isAndroid(): boolean {
+  return !!navigator.userAgent.match(/Android/i);
+}
+
 @Component
 export default class App extends Vue {
   // List of available routes
   routes: IRoute[] = [];
+
+  // Whether or not we are running on Android
+  isAndroid: boolean = isAndroid();
 
   /**
    * Vue Lifecycle Method
@@ -60,7 +70,19 @@ export default class App extends Vue {
 <style lang="less" scoped>
 .md-app {
   max-height: 100vh;
+  // This is a bit of a hack to fix the weird navbar behaviour on Chrome Android
+  // See here for explanation: https://dev.to/peiche/100vh-behavior-on-chrome-2hm8
+  @supports (-webkit-appearance: none) {
+    &.os-android {
+      // Remove the height of the Navbar for Chrome Android
+      max-height: calc(100vh - 56px);
 
+      @media all and (display-mode: standalone) {
+        // If the app is running in standalone, it should still use the full height
+        max-height: 100vh;
+      }
+    }
+  }
   // Target the md-app container that is inside the material component
   & /deep/ .md-app-container {
     overflow: hidden;
