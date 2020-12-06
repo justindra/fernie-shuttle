@@ -1,5 +1,9 @@
 # fernie-shuttle
 
+> **DEPRECATED**
+> 
+> Have deprecated this project in favour of [Townhub](https://github.com/justindra/townhub). Which will allow for expansion into other towns, other features and also have a backend to support it. 
+
 This is a simple frontend application to display the timetable of the [Fernie Shuttle](http://fernieskishuttle.com).
 
 ## Project setup
